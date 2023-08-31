@@ -1,0 +1,112 @@
+<!-- templates/blog/post_detail.html -->
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}  
+<!-- <div class="blog-entry__hero">
+    <picture class="blog-entry__header-media">
+    <source media="(max-width: 760px)" srcset="https://www.worldwidestereo.com/media/W1siZiIsIjIwMjAvMTIvMDgvMTEvNDQvMDYvNzAxLzIwMjAwNjA1X1dFQl9IZWFkcGhvbmVfQnV5aW5nX0d1aWRlX0Jsb2dfVGh1bWJuYWlsLmpwZyJdXQ/20200605-WEB-Headphone-Buying-Guide-Blog-Thumbnail.jpg?sha=d0400d840bc17ee8">
+    <img alt="How to Choose the Right Pair of Headphones for You" class="blog-entry__header-image" src="{{ post.image.url }}">
+    </picture>
+    </div>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Published on: {{ post.published_date }}</p> -->  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            max-width: 50%;
+            margin-right: 20px;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-content {
+            max-width: 45%;
+        }
+        .buy-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .buy-button {
+            padding: 10px 20px;
+            background-color: #FF9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #FFCC00;
+        }
+    </style>
+</head>
+<body>  
+    
+        <img src="{% static 'app/Main.jpg' %}" alt="My image" style="margin-left: 50px;">
+    
+
+    <div class="container"> 
+        
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="{{ post.image.url }}" alt="Product Image">
+            </div>
+            <div class="product-content">
+                <h1>{{ post.title }}</h1>
+                <p>{{ post.content }}</p>
+                <p>Price: ${{ post.price }}</p> 
+                <div class="product-specifications">
+                    <h2>Specifications</h2> 
+                    {% for spec in post.specification_set.all %}
+                        <table class="table table-dark table-striped" style="text-align:start;">
+                            <tr>
+                                <td>
+                                    <p>{{ spec.name }}:</p>
+                                </td>
+                                <td style="text-align:right;">
+                                    <p>{{ spec.value }}</p>
+                                </td>
+                            </tr>
+                        </table> 
+                        {% endfor %} 
+ 
+                </div>
+                
+                <p>Published on: {{ post.published_date }}</p>
+                <div class="buy-buttons">
+                    <a href="https://www.amazon.in" class="buy-button" target="_blank">Buy on Amazon</a>
+                    <a href="https://www.amazon.in" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Placeholder for more headphone images -->
+        <h2>More Headphones</h2>
+        <div class="product-detail">
+            <!-- Add more headphone images and details here -->
+        </div>
+    </div>
+{% endblock %} 

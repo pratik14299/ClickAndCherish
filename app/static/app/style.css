@@ -1,0 +1,34 @@
+/* h1{
+    background-color: red;
+    border-style: double;
+} */
+.content{
+    width: 100%;
+    height: 80vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+.heading-container {
+    background-color:  #263238;; /* Cool blue background color */
+    color: white; /* White text color */
+    text-align: center;
+    padding: 50px 0;
+}
+.heading {
+    background-color: #263238;
+    font-family: 'Pacifico', cursive; /* Cool font */
+    font-size: 2.5rem; /* Adjust font size as needed */
+    margin: 0;
+}
+.logo {
+    max-width: 40px; /* Adjust the width as needed */
+    height: auto; /* This ensures the logo scales proportionally */
+    margin-right: 50px; /* Add some spacing between the logo and text */
+}
+.carousel-inner > .item > img{
+     width:100%; 
+     height:570px; 
+    } 
